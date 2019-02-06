@@ -4,7 +4,9 @@
         <mt-header fixed title="Vue学习-项目1"></mt-header>
 
         <!--router-view-->
-		<router-view></router-view>
+		<transition>
+			<router-view></router-view>
+		</transition>
 
         <!--tabbar-->
         <nav class="mui-bar mui-bar-tab">
@@ -37,7 +39,24 @@
 <style scoped>
     .app-container {
         padding-top: 40px;
+		overflow-x: hidden; /*隐藏滚动条*/
     }
+
+	.vue-enter {
+		opacity: 0;
+		transform: translateX(100%); /*右进*/
+		position: absolute;
+	}
+	.v-leave-to {
+		opacity: 0;
+		transform: translateX(-100%); /*左出*/
+		position: absolute; /*去除漂移效果*/
+	}
+
+	.v-enter-active,
+	.v-leave-active {
+		transition: all 0.6s ease;
+	}
 </style>
 
 

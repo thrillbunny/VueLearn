@@ -10,22 +10,22 @@
         <!--六宫格区域-->
         <ul class="mui-table-view mui-grid-view mui-grid-9">
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
-                    <span class="mui-icon mui-icon-home"></span>
+                    <img src="../images/marker.png">
                     <div class="mui-media-body">新闻资讯</div></a></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
-                    <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
+                    <img src="../images/image_sequence.png">
                     <div class="mui-media-body">图片分享</div></a></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
-                    <span class="mui-icon mui-icon-chatbubble"></span>
+                    <img src="../images/shopping_cart.png">
                     <div class="mui-media-body">商品购买</div></a></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
-                    <span class="mui-icon mui-icon-location"></span>
+                    <img src="../images/brochure.png">
                     <div class="mui-media-body">留言反馈</div></a></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
-                    <span class="mui-icon mui-icon-search"></span>
+                    <img src="../images/play_video.png">
                     <div class="mui-media-body">视频专区</div></a></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
-                    <span class="mui-icon mui-icon-phone"></span>
+                    <img src="../images/ogg_vorbis.png">
                     <div class="mui-media-body">联系我们</div></a></li>
         </ul> 
     </div>
@@ -87,5 +87,15 @@ export default {
 
     .mui-grid-view.mui-grid-9 .mui-table-view-cell {
         border: 0;
+    }
+
+    .mui-media-body{
+        font-size: 14px;
+        color: rgb(94, 92, 92);
+    }
+
+    li img {
+        height: 40px;
+        width: 40px;
     }
 </style>

@@ -10,6 +10,7 @@ Vue.use(VueRouter);
 
 var router = new VueRouter({
     routes: [
+        { path: "/", redirect: "/home" },
         { path: "/home", component: HomeContainer },
         { path: "/member", component: MemberContainer },
         { path: "/search", component: SearchContainer },
