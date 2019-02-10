@@ -1,10 +1,13 @@
 import Vue from "Vue";
 import VueRouter from "vue-router";
 
-import HomeContainer from "./components/HomeContainer.vue";
-import MemberContainer from "./components/MemberContainer.vue";
-import SearchContainer from "./components/SearchContainer.vue";
-import ShopcarContainer from "./components/ShopcarContainer.vue";
+import HomeContainer from "./components/tabbar/HomeContainer.vue";
+import MemberContainer from "./components/tabbar/MemberContainer.vue";
+import SearchContainer from "./components/tabbar/SearchContainer.vue";
+import ShopcarContainer from "./components/tabbar/ShopcarContainer.vue";
+
+import NewsList from "./components/news/NewsList.vue";
+import NewsInfo from "./components/news/NewsInfo.vue";
 
 Vue.use(VueRouter);
 
@@ -14,7 +17,10 @@ var router = new VueRouter({
         { path: "/home", component: HomeContainer },
         { path: "/member", component: MemberContainer },
         { path: "/search", component: SearchContainer },
-        { path: "/shopcar", component: ShopcarContainer }
+        { path: "/shopcar", component: ShopcarContainer },
+
+        { path: "/home/newsList", component: NewsList },
+        { path: "/home/newsinfo/:id", component: NewsInfo }
     ],
     linkActiveClass: "mui-active" //覆盖默认的路由高亮的类，默认类叫router-link-active
 });
