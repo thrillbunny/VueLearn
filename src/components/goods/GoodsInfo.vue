@@ -69,7 +69,7 @@
                 swipeList: [], //保存轮播图数据
                 goodsinfo: {}, //获取商品的信息
                 ballFlag: false, //控制小球的隐藏和显示
-                selectedCount: 1, //父组件获取数字选择框子组件传递来的数值，默认为1
+                selectedCount: 1, //父组件获取数字选择框子组件传递来的数值(即购买的数量)，默认为1
             };
         },
         created() {
@@ -108,6 +108,13 @@
             addToShopCar() {
                 //控制小球是否显示
                 this.ballFlag = !this.ballFlag;
+
+                //拼接出要保存到vuex.store中car数组的商品信息对象
+                var goodsToCarinfo = { id: this.id, count: this.selectedCount, 
+                price: this.goodsinfo.sell_price, selected: true };
+
+                //调用mutations的方法来将商品加入购物车
+                this.$store.commit("infoAddToCar", goodsToCarinfo);
             },
             //小球动画钩子函数
             beforeEnter(el) {

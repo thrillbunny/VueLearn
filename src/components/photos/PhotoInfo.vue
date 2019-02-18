@@ -11,8 +11,14 @@
         <hr>
 
         <!--缩略图区域-->
-        <!--新版方法不同于老版本-->
-        <vue-preview :slides="list" class="thumbs"></vue-preview>   
+        <!--新版方法不同于老版本,采用vue2-preview-->
+        <!-- <vue-preview :slides="list" class="thumbs"></vue-preview> -->
+        <vue-preview
+            :list="list"
+            :thumbImageStyle="{width: '80px', height: '80px', margin: '10px'}"
+            :previewBoxStyle="{border: '1px solid #eee'}"
+            :tapToClose="true"
+        />
 
         <!--内容区域-->
         <div class="content" v-html="photoInfo.content"></div>
@@ -52,7 +58,7 @@
                         result.body.message.forEach(element => { //循环图片补全宽和高
                             element.w = 600;
                             element.h = 400;
-                            element.msrc = element.src;
+                            //element.msrc = element.src;
                         });
                         this.list = result.body.message;
                     }
@@ -65,31 +71,32 @@
     }
 </script>
 
-<style>
+<style lang="scss">
     .photoinfo-container {
         padding: 3px;
-    }
-    .photoinfo-container .title {
-        color: #26a2ff;
-        font-size: 16px;
-        line-height: 14px;
-        text-align: center;
-        margin: 15px 0;
-    }
-    .photoinfo-container .subtitle {
-        display: flex;
-        justify-content: space-between;
-        font-size: 13px;
-    }
 
-    .content {
-        line-height: 25px;
-        font-size: 13px;
-    }
+        .title {
+            color: #26a2ff;
+            font-size: 16px;
+            line-height: 14px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .subtitle {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
 
-    /* img {
-        margin: 10px;
-        box-shadow: 0 0 10px #999;
-    } */
+        .content {
+            line-height: 25px;
+            font-size: 13px;
+        }
+
+        img {
+            margin: 10px;
+            box-shadow: 0 0 10px #999;
+        }
+    }
 </style>
 
