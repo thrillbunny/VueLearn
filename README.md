@@ -29,3 +29,7 @@
         + 实现商品加入购物车功能（小球动画）
         + vuex实现状态管理模式，存储购物车相关数据
         + 实现项目结算页面的布局和功能实现
+        
+### 实例界面
+
+![论坛实例界面](https://github.com/thrillbunny/VueLearn/blob/master/vue.gif)
